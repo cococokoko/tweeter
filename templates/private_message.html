@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+  
+<div id="tweets">
+    {% for message in messages %}
+    <div class="tweet">
+      <span><a href="{{url_for('user_detail', user_id=message[1])}}">{{message[2]}}</a>: {{message[0]}}</span>
+    </div>
+    {% endfor %}
+  </div>
+  
+  
+  
+<hr>
+
+<form action="/messages/{{followee_id}}" method="POST">
+    <textarea name="message" id="message">Write something here!</textarea>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Message!</button>
+</form>
+  
+
+
+{% endblock %}
+
+

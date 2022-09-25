@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <h2>You searched for..  {{ searched }} </h2>
+    
+   
+    {% for tweet in tweets %}
+    <div id="tweets">
+        <img src="{{tweet[3]}}" alt="image for {{tweet[2]}}" class="profile">
+        <span><a href="{{url_for('user_detail', user_id=tweet[0])}}">{{tweet[2]}}</a>: {{tweet[1]}}</span>
+    </div>
+    {% endfor %}
+   
+
+{% endblock %}

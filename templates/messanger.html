@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h5>Select the friend you would like to message:</h5>
+{% for followee in followees %}
+<div class="tweet">
+    <img src="{{followee[2]}}" alt="image for {{followee[1]}}" class="profile">
+<span><a href="{{url_for('private_messages', followee_id=followee[0])}}">{{followee[1]}}</a></span>
+</div>
+{% endfor %}
+{% endblock %}

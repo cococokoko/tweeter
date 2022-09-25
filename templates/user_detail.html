@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div id="tweets">
+{% for tweet in tweets %}
+<div class="tweet">
+  <img src="{{user[2]}}" alt="image for {{user[1]}}" class="profile">
+  <span><a href="{{url_for('user_detail', user_id=user[0])}}">{{user[1]}}</a>: {{tweet[0]}}</span>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
